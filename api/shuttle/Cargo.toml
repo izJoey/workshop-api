@@ -1,0 +1,23 @@
+[package]
+name = "api-shuttle"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.9.0"
+shuttle-actix-web = "0.47.0"
+shuttle-runtime = "0.47.0"
+tokio = "1.40.0"
+# database
+shuttle-shared-db = { version = "0.47.0", features = ["postgres"] }
+sqlx = { version = "0.7.4", default-features = false, features = [
+  "runtime-async-std",
+  "tls-native-tls",
+  "macros",
+  "postgres",
+  "uuid",
+  "chrono",
+  "json",
+] }
+tracing = "0.1"
+api-lib = { path = "../lib" }
