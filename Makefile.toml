@@ -10,7 +10,7 @@ args = ["shuttle", "run"]
 workspace = false
 cwd = "./front"
 install_crate = "dioxus-cli"
-command = "dioxus"
+command = "dx"
 args = ["serve"]
 
 [tasks.front-build]
@@ -23,7 +23,7 @@ rm -rf api/shuttle/static static
 mkdir api/shuttle/static
 mkdir static
 cd front
-dioxus build --release
+dx build --release
 # local development 
 cp -r dist/* ../api/shuttle/static
 # production
